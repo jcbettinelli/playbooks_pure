@@ -11,21 +11,29 @@ The automation covers:
 
 
 ## Project Structure
-    ├── playbook.yml                # Main playbook calling roles
+    project/
+    ├── playbook-create-datastore.yml    # Creates volume, replicates, mounts datastore
+    ├── playbook-map-volume.yml          # Creates host and maps existing volume
+    ├── playbook-snapshot-clone.yml      # Creates snapshot, clone, and maps clone
     ├── roles/
-    │   ├── purestorage/            # Role for Pure Storage tasks
+    │   ├── purestorage/
     │   │   ├── tasks/
     │   │   │   ├── create_volume.yml
     │   │   │   ├── configure_initiators.yml
     │   │   │   ├── replicate_volume.yml
-    │   │   └── defaults/main.yml   # Default variables for Pure Storage
-    │   ├── vmware/                 # Role for VMware tasks
+    │   │   │   ├── create_host.yml
+    │   │   │   ├── map_existing_volume.yml
+    │   │   │   ├── create_snapshot.yml
+    │   │   │   ├── create_clone.yml
+    │   │   │   ├── map_clone_to_host.yml
+    │   │   └── defaults/main.yml
+    │   ├── vmware/
     │   │   ├── tasks/
     │   │   │   ├── rescan_hba.yml
     │   │   │   ├── mount_datastore.yml
-    │   │   └── defaults/main.yml   # Default variables for VMware
+    │   │   └── defaults/main.yml
     └── group_vars/
-    └── all.yml                 # Centralized variables (optional)
+    └── all.yml
 
 ---
 ## Playbooks
@@ -99,3 +107,4 @@ The automation covers:
 - Validate zoning and connectivity for FC before running.
 
 - Test in a non-production environment first.  
+
