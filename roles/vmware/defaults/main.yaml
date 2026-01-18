@@ -1,1 +1,5 @@
-
+vcenter_hostname: "{{ lookup('env', 'VCENTER_HOSTNAME') }}"
+vcenter_username: "{{ lookup('env', 'VCENTER_USERNAME') }}"
+vcenter_password: "{{ lookup('env', 'VCENTER_PASSWORD') }}"
+esxi_hostname: "esxi01.example.com"
+datastore_name: "Pure_Datastore"
