@@ -1,0 +1,8 @@
+- name: Create snapshot of existing volume
+  purestorage.flasharray.purefa_snap:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    source: "{{ existing_volume_name }}"
+    suffix: "{{ snapshot_suffix }}"
+    state: present
+  tags: snapshot

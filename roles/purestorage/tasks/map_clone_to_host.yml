@@ -1,0 +1,9 @@
+- name: Map clone to host
+  purestorage.flasharray.purefa_host:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    name: "{{ target_host_name }}"
+    volumes:
+      - "{{ clone_volume_name }}"
+    state: present
+  tags: map_clone

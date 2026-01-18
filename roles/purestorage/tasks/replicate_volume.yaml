@@ -1,0 +1,17 @@
+- name: Create replication link
+  purestorage.flasharray.purefa_connect:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    target_url: "{{ fa_b_url }}"
+    target_api_token: "{{ fa_b_api_token }}"
+    state: present
+  tags: replicate
+
+- name: Replicate volume to FlashArray B
+  purestorage.flasharray.purefa_volume:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    name: "{{ volume_name }}"
+    target: "{{ fa_b_url }}"
+    state: copy
+  tags: replicate

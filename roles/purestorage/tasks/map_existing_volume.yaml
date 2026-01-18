@@ -1,0 +1,8 @@
+- name: Map existing volume to new host
+  purestorage.flasharray.purefa_host:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    name: "{{ new_host_name }}"
+    volumes:
+      - "{{ existing_volume_name }}"
+    state: present

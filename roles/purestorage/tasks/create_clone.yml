@@ -1,0 +1,8 @@
+- name: Create clone from snapshot
+  purestorage.flasharray.purefa_volume:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    name: "{{ clone_volume_name }}"
+    source: "{{ existing_volume_name }}.{{ snapshot_suffix }}"
+    state: present
+  tags: clone

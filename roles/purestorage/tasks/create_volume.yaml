@@ -1,0 +1,8 @@
+- name: Create volume on FlashArray A
+  purestorage.flasharray.purefa_volume:
+    fa_url: "{{ fa_a_url }}"
+    api_token: "{{ fa_a_api_token }}"
+    name: "{{ volume_name }}"
+    size: "{{ volume_size }}"
+    state: present
+  tags: create_volume
