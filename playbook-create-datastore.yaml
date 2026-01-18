@@ -1,0 +1,14 @@
+---
+- name: Pure Storage and VMware Integration
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - role: purestorage
+      tags:
+        - create_volume
+        - configure_initiators
+        - replicate
+    - role: vmware
+      tags:
+        - rescan_hba
+        - mount_datastore

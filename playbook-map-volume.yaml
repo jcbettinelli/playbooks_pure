@@ -1,0 +1,8 @@
+---
+- name: Create Host and Map Existing Volume on Pure Storage
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - role: purestorage
+      tags: [create_host, map_existing_volume]
+

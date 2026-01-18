@@ -1,0 +1,6 @@
+---- name: Create Snapshot, Clone, and Map to Host
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - role: purestorage
+      tags: [snapshot, clone, map_clone]
