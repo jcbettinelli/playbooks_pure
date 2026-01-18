@@ -76,7 +76,7 @@ The automation covers:
 ## How to Run
 
 1. Export environment variables (if using lookup('env')):
-
+    ```bash
     export FA_A_URL="https://flasharray-a.example.com"
     export FA_A_API_TOKEN="your_api_token_a"
     export FA_B_URL="https://flasharray-b.example.com"
@@ -97,4 +97,5 @@ The automation covers:
     ```bash
     ansible-vault encrypt_string 'mysecret' --name 'fa_a_api_token'
 - Validate zoning and connectivity for FC before running.
+
 - Test in a non-production environment first.  
