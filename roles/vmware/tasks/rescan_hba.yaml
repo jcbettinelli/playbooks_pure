@@ -1,0 +1,9 @@
+- name: Rescan HBAs on ESXi host
+  community.vmware.vmware_host_scanhba:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: no
+    esxi_hostname: "{{ esxi_hostname }}"
+    rescan_all_hba: true
+  tags: rescan_hba

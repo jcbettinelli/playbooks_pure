@@ -1,1 +1,12 @@
-
+- name: Mount Pure Storage volume as VMware datastore
+  community.vmware.vmware_host_datastore:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: no
+    esxi_hostname: "{{ esxi_hostname }}"
+    datastore_name: "{{ datastore_name }}"
+    datastore_type: "vmfs"
+    lun: "{{ volume_name }}"
+    state: present
+  tags: mount_datastore
