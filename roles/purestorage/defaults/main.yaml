@@ -1,0 +1,17 @@
+fa_a_url: "{{ lookup('env', 'FA_A_URL') }}"
+fa_a_api_token: "{{ lookup('env', 'FA_A_API_TOKEN') }}"
+fa_b_url: "{{ lookup('env', 'FA_B_URL') }}"
+fa_b_api_token: "{{ lookup('env', 'FA_B_API_TOKEN') }}"
+volume_name: "ansible_demo_vol"
+volume_size: "500G"
+fc_wwns:
+  - "10:00:00:00:00:00:00:01"
+  - "10:00:00:00:00:00:00:02"
+
+# Host details
+new_host_name: "esxi02.example.com"
+
+# Existing volume and snapshot details
+existing_volume_name: "production_datastore"
+snapshot_suffix: "ansible_snap"
+clone_volume_name: "production_clone"
