@@ -1,1 +1,33 @@
+# Variables could be used in that file
+
+# Pure Storage Arrays
+fa_a_url: "https://flasharray-a.example.com"
+fa_a_api_token: "YOUR_API_TOKEN_A"
+fa_b_url: "https://flasharray-b.example.com"
+fa_b_api_token: "YOUR_API_TOKEN_B"
+
+# VMware vCenter
+vcenter_hostname: "vcenter.example.com"
+vcenter_username: "administrator@vsphere.local"
+vcenter_password: "YOUR_VCENTER_PASSWORD"
+
+# Common Volume and Datastore Details
+volume_name: "ansible_demo_vol"
+volume_size: "500G"
+datastore_name: "Pure_Datastore"
+
+# Host Details
+esxi_hostname: "esxi01.example.com"
+new_host_name: "esxi02.example.com"
+target_host_name: "esxi03.example.com"
+
+# Fibre Channel WWNs for hosts
+fc_wwns:
+  - "10:00:00:00:00:00:00:01"
+  - "10:00:00:00:00:00:00:02"
+
+# Snapshot and Clone Details
+existing_volume_name: "production_datastore"
+snapshot_suffix: "ansible_snap"
+clone_volume_name: "production_clone"
 
