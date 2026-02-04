@@ -8,7 +8,7 @@
   tags: configure_initiators
 
 - name: Connect volume to ESXi FC initiator group
-  purestorage.flasharray.purefa_hgroup:
+  purestorage.flasharray.purefa_hg:
     fa_url: "{{ fa_a_url }}"
     api_token: "{{ fa_a_api_token }}"
     name: "esxi_host_group"
@@ -16,6 +16,7 @@
       - "{{ volume_name }}"
     state: present
   tags: configure_initiators
+
 
 
 
