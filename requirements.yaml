@@ -1,0 +1,4 @@
+---
+collections:
+  - name: purestorage.flasharray    # FlashArray modules
+  - name: community.vmware          # vSphere modules
