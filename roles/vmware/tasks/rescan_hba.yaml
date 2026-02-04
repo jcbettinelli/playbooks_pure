@@ -4,6 +4,7 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     validate_certs: no
-    esxi_hostname: "{{ esxi_hostname }}"
-    rescan_all_hba: true
+    cluster_name: "{{ vmware_cluster_name }}"
+    resfresh_storage: true
   tags: rescan_hba
+
