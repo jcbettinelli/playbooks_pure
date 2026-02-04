@@ -4,5 +4,6 @@
     api_token: "{{ fa_a_api_token }}"
     name: "{{ new_host_name }}"
     state: present
-    wwns: "{{ fc_wwns }}"   # For FC initiators
-    # iqn: "{{ iscsi_iqns }}" # Uncomment for iSCSI initiators
+    # wwns: "{{ fc_wwns }}"   # Uncomment For FC initiators
+    iqn: "{{ iscsi_iqns }}" #  for iSCSI initiators
+
