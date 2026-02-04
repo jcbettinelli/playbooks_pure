@@ -1,11 +1,11 @@
-- name: Create FC initiator group for ESXi
-  purestorage.flasharray.purefa_host:
-    fa_url: "{{ fa_a_url }}"
-    api_token: "{{ fa_a_api_token }}"
-    name: "{{ new_host_group }}"
-    state: present
-    iqn: "{{ iscsi_iqns }}"
-  tags: configure_initiators
+#- name: Create FC initiator group for ESXi
+#  purestorage.flasharray.purefa_host:
+#    fa_url: "{{ fa_a_url }}"
+#    api_token: "{{ fa_a_api_token }}"
+#    name: "{{ new_host_group }}"
+#    state: present
+#    iqn: "{{ iscsi_iqns }}"
+#  tags: configure_initiators
 
 - name: Connect volume to ESXi FC initiator group
   purestorage.flasharray.purefa_hg:
@@ -16,6 +16,7 @@
       - "{{ volume_name }}"
     state: present
   tags: configure_initiators
+
 
 
 
