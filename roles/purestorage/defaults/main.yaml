@@ -14,6 +14,7 @@ iscsi_iqns:
 
 # Host details
 new_host_name: "Cluster"
+new_host_group: "Cluster"
 
 # Existing volume and snapshot details
 existing_volume_name: "production_datastore"
