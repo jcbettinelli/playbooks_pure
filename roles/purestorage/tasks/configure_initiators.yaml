@@ -12,10 +12,11 @@
     fa_url: "{{ fa_a_url }}"
     api_token: "{{ fa_a_api_token }}"
     name: "{{ new_host_group }}"
-    volumes:
+    volume:
       - "{{ volume_name }}"
     state: present
   tags: configure_initiators
+
 
 
 
