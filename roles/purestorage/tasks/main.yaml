@@ -1,0 +1,34 @@
+---
+# roles/purestorage/tasks/main.yml
+
+# 1. Create base volume
+- name: Create volume
+  import_tasks: create_volume.yaml
+
+# 2. Replicate volume (if applicable)
+- name: Replicate volume
+  import_tasks: replicate_volume.yaml
+
+# 3. Configure initiators on the FlashArray
+- name: Configure initiators
+  import_tasks: configure_initiators.yaml
+
+# 4. Create host on the FlashArray
+- name: Create host
+  import_tasks: create_host.yaml
+
+# 5. Map an existing volume to the host
+- name: Map existing volume
+  import_tasks: map_existing_volume.yaml
+
+# 6. Create a snapshot of the existing volume
+- name: Create snapshot
+  import_tasks: create_snapshot.yaml
+
+# 7. Create clone from the snapshot
+- name: Create clone
+  import_tasks: create_clone.yaml
+
+# 8. Map clone to host
+- name: Map clone to host
+  import_tasks: map_clone_to_host.yaml
