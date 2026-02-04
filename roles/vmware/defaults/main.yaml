@@ -3,4 +3,6 @@ vcenter_username: "{{ lookup('env', 'VCENTER_USERNAME') }}"
 vcenter_password: "{{ lookup('env', 'VCENTER_PASSWORD') }}"
 esxi_hostname: "esxi-1.testdrive.local"
 datastore_name: "Pure_Datastore"
+vmware_cluster_name: "TD Cluster"
+
 
