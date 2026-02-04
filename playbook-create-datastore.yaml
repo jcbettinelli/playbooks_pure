@@ -4,14 +4,15 @@
   gather_facts: no
   tasks:
     - name: "Pure: Create Volume "
-      ansible.builtin.import_tasks: "../roles/purestorage/tasks/create_volume.yaml"
+      ansible.builtin.import_tasks: "./roles/purestorage/tasks/create_volume.yaml"
 
     - name "Pure: Create Host Group and Mount Volume to Host Group"
-      ansible.builtin.import_tasks: "../roles/purestorage/tasks/create_volume.yaml"
+      ansible.builtin.import_tasks: "./roles/purestorage/tasks/create_volume.yaml"
       
     - name "VMware: Rescan HBA"
-      ansible.builtin.import_tasks: "../roles/vmware/tasks/rescan_hba.yaml"
+      ansible.builtin.import_tasks: "./roles/vmware/tasks/rescan_hba.yaml"
 
     - name "VMware: Mount Datastore"
-      ansible.builtin.import_tasks: "../roles/vmware/tasks/mount_datastore.yaml"
+      ansible.builtin.import_tasks: "./roles/vmware/tasks/mount_datastore.yaml"
     
+
