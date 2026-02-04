@@ -5,11 +5,15 @@ fa_b_api_token: "{{ lookup('env', 'FA_B_API_TOKEN') }}"
 volume_name: "ansible_demo_vol"
 volume_size: "500G"
 fc_wwns:
-  - "10:00:00:00:00:00:00:01"
+  - "10:00:00:00:00:00:00:0"
   - "10:00:00:00:00:00:00:02"
 
+iscsi_iqns:
+  - "iqn.1998-01.com.vmware.esxi1.testdrive.local:1100996300:65"
+  - "iqn.1998-01.com.vmware.esxi2.testdrive.local:931512260:65"
+
 # Host details
-new_host_name: "esxi02.example.com"
+new_host_name: "esxi-1.testdrive.local"
 
 # Existing volume and snapshot details
 existing_volume_name: "production_datastore"
