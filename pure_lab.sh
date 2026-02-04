@@ -1,5 +1,5 @@
-export FA_
-export
-export
-export
-export 
+export FA_A_URL="https://10.0.0.11"
+export FA_A_API_TOKEN="your_api_token_a"
+export VCENTER_HOSTNAME="10.0.0.30"
+export VCENTER_USERNAME="pureuser"
+export VCENTER_PASSWORD="pureuser"
