@@ -2,7 +2,7 @@
 # roles/vmware/tasks/main.yml
 
 # 1. Mount datastore
-- name: Mount Datastore
+- name: Mount Pure Storage volume as VMware datastore
   import_tasks: mount_datastore.yaml
 
 # 2. Rescan the hba
