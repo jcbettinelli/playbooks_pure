@@ -2,7 +2,7 @@
   purestorage.flasharray.purefa_host:
     fa_url: "{{ fa_a_url }}"
     api_token: "{{ fa_a_api_token }}"
-    name: "esxi_host_group"
+    name: "{{ new_host_group }}"
     state: present
     iqn: "{{ iscsi_iqns }}"
   tags: configure_initiators
@@ -16,6 +16,7 @@
       - "{{ volume_name }}"
     state: present
   tags: configure_initiators
+
 
 
 
