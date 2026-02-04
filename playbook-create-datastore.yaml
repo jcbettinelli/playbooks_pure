@@ -7,8 +7,8 @@
       tags:
         - create_volume
         - configure_initiators
-        - replicate
     - role: vmware
       tags:
         - rescan_hba
         - mount_datastore
+
