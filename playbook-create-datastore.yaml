@@ -4,11 +4,5 @@
   gather_facts: no
   roles:
     - role: purestorage
-      tags:
-        - create_volume
-        - configure_initiators
     - role: vmware
-      tags:
-        - rescan_hba
-        - mount_datastore
 
