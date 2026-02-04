@@ -16,10 +16,11 @@
     - name: "VMware: Rescan HBA"
       import_role:
         name: vmware
-        tasks_from: rescan_hba.yaml"
+        tasks_from: rescan_hba.yaml
 
     - name: "VMware: Mount Datastore"
       import_role:
         name: vmware
         tasks_from: mount_datastore.yaml
     
+
