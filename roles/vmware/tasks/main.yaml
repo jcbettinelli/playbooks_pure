@@ -1,0 +1,10 @@
+---
+# roles/vmware/tasks/main.yml
+
+# 1. Mount datastore
+- name: Mount Datastore
+  import_tasks: mount_datastore.yaml
+
+# 2. Rescan the hba
+- name: Rescan HBA
+  import_tasks: rescan_hba.yaml
