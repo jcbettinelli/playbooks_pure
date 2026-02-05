@@ -13,8 +13,8 @@ iscsi_iqns:
   - "iqn.1998-01.com.vmware.esxi2.testdrive.local:931512260:65"
 
 # Host details
-new_host_name: "Cluster"
-new_host_group: "Cluster"
+new_host_name: "TD-Cluster"
+new_host_group: "TD-Cluster"
 
 # Existing volume and snapshot details
 existing_volume_name: "production_datastore"
