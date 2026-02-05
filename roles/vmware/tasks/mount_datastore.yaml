@@ -1,12 +1,39 @@
-- name: Mount Pure Storage volume as VMware datastore
-  community.vmware.vmware_host_datastore:
+- name: Get disks from the ESXi host
+  community.vmware.vmware_host_disk_info:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     validate_certs: no
     esxi_hostname: "{{ esxi_hostname }}"
-    datastore_name: "{{ datastore_name }}"
-    datastore_type: "vmfs"
-    lun: "{{ volume_name }}"
-    state: present
+  register: host_disks
+  delegate_to: localhost
   tags: mount_datastore
+
+- name: Pick Pure device by size (demo heuristic)
+  set_fact:
+    vmfs_device_name: >-
+      {{
+        (host_disks.hosts_disk_info[esxi_hostname] | default([]))
+        | selectattr('device_type','equalto','disk')
+        | selectattr('display_name','search','(?i)pure|flasharray')
+        | selectattr('capacity_mb','equalto', (volume_size_gb | int * 1024))
+        | map(attribute='canonical_name')
+        | first
+      }}
+  tags: mount_datastore
+
+- name: Pick Pure device by size (demo heuristic)
+  set_fact:
+    vmfs_device_name: >-
+      {{
+        (host_disks.hosts_disk_info[esxi_hostname] | default([]))
+        | selectattr('device_type','equalto','disk')
+        | selectattr('display_name','search','(?i)pure|flasharray')
+        | selectattr('capacity_mb','equalto', (volume_size_gb | int * 1024))
+        | map(attribute='canonical_name')
+        | first
+      }}
+  tags: mount_datastore
+  
+
+      
