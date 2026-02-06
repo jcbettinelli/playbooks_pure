@@ -44,7 +44,7 @@ The automation covers:
 - Rescans ESXi HBAs and mounts the volume as a VMware datastore.
 
 #### Run:
-    ansible-playbook playbook-create-datastore.yml --tags create_volume, configure_initiators,replicate,rescan_hba,mount_datastore
+    ansible-playbook playbook-create-datastore.yml
 
 ### **2. `playbook-map-volume.yml`**
 
@@ -53,7 +53,7 @@ The automation covers:
 
 #### Run:
 
-    ansible-playbook playbook-map-volume.yml --tags create_host,map_volume
+    ansible-playbook playbook-map-volume.yml
 
 ### **3. `playbook-snapshot-clone.yml`**
 
@@ -63,7 +63,7 @@ The automation covers:
 
 #### Run:
 
-    ansible-playbook playbook-snapshot-clone.yml --tags snapshot,clone,map_clone
+    ansible-playbook playbook-snapshot-clone.yml
 
 ## Prerequisites
 1. **Install Ansible Collections:**
@@ -72,7 +72,7 @@ The automation covers:
    ansible-galaxy collection install community.vmware
 2. **Install Python Dependencies:**
    ```bash
-   pip install purestorage pyvmomi
+   pip install purestorage pyvmomi py-pure-lcient
 3. **Credentials:**
 - FlashArray API tokens
 - vCenter credentials
@@ -85,7 +85,7 @@ The automation covers:
 
 1. Export environment variables (if using lookup('env')):
     ```bash
-    export FA_A_URL="https://flasharray-a.example.com"
+    export FA_A_URL="flasharray-a.example.com"
     export FA_A_API_TOKEN="your_api_token_a"
     export FA_B_URL="https://flasharray-b.example.com"
     export FA_B_API_TOKEN="your_api_token_b"
@@ -107,4 +107,5 @@ The automation covers:
 - Validate zoning and connectivity for FC before running.
 
 - Test in a non-production environment first.  
+
 
