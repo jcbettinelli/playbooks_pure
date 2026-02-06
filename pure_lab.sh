@@ -1,4 +1,4 @@
-export FA_A_URL="https://10.0.0.11"
+export FA_A_URL="10.0.0.11"
 export FA_A_API_TOKEN="330a40f0-2eb9-b6a9-d3f2-2a76d44fdacd"
 export VCENTER_HOSTNAME="10.0.0.30"
 export VCENTER_USERNAME="pureuser"
